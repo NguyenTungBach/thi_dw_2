@@ -114,45 +114,6 @@
             });
         });
 
-        $(document).ready(function () {
-            function loadData() {
-                $.ajax({
-                    url:'http://localhost:8080/Thi_DW_2/listAll.php', // api php thuần
-                    method: 'get',
-                    success: function (responseData) {
-                        var data = responseData.data;
-                        alert(responseData.message);
-                        var contentHTML = `<tr>
-                            <th>id</th>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>telephone</th>
-                            <th>content</th>
-                            <th>date</th>
-                            <th>status</th>
-                            </tr>`;
-                        data.forEach(element => {
-                            contentHTML += `
-                        <tr>
-                        <th>${element.id}</th>
-                        <th>${element.name}</th>
-                        <th>${element.email}</th>
-                        <th>${element.telephone}</th>
-                        <th>${element.content}</th>
-                        <th>${element.date}</th>
-                        <th>${element.status}</th>
-                        </tr>
-                        `;
-                        })
-                        $('#content').html(contentHTML);
-                    },
-                    error:function (error) {
-                        alert(error);
-                    }
-                });
-            }
-            loadData();
-        });
     });
 </script>
 </body>
