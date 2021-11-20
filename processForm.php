@@ -17,6 +17,7 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 if ($conn->connect_error){
     die("Connection failed: " . $conn->connect_error);
 }
+
 $sql = "INSERT INTO test2 (name,email,telephone,content,date,status) VALUES ('$name','$email','$telephone','$content','$date','$status')";
 
 // config respone data kiểu json
